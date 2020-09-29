@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
-  const Post = sequelize.define('posts', {
+  const Post = sequelize.define('post', {
     content: DataTypes.TEXT,
   }, {
     freezeTableName: true,

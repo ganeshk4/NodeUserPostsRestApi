@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let db = require('../../../models/');
+let db = require('../../models');
 let userModel = db.user;
 
-router.get('/getAll',(req, res) => {
+router.get('/all',(req, res) => {
   userModel.findAll()
     .then((users) => {
       res.status(200).json(users);
