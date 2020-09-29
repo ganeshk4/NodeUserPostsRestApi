@@ -15,5 +15,8 @@ app.use('/api', apiRouter);
 db.sequelize.sync({force: true})
 .then(() => {
     console.log('db connection success');
+})
+.catch((err) => {
+    console.error(err);
 });
 module.exports = app;
