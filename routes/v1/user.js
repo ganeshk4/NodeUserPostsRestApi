@@ -1,23 +1,15 @@
 let express = require('express');
 let router = express.Router();
-let db = require('../../models');
-let userModel = db.user;
+let userController = require('../../controllers/user');
 
-router.get('/all',(req, res) => {
-  userModel.findAll()
-    .then((users) => {
-      res.status(200).json(users);
-    });
-});
-
-router.post('/create',(req, res) => {
-  let newUser = req.body;
-  userModel.create({
-    name: newUser.name
+module.exports = () => {
+  router.route('/')
+  .get((req, res) => {
+    userController.get(req, res);
   })
-  .then((user) => {
-     res.status(200).json(user);
+  .post((req, res) => {
+    userController.post(req, res);
   });
-});
 
-module.exports = router;
+  return router;
+};
