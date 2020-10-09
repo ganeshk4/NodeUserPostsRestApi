@@ -13,11 +13,16 @@
     }
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "ganesh",
+    "database": "febonacci_test",
+    "password": "ganesh",
+    "host": "192.168.0.100",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
   },
   "prod": {
     "username": "root",

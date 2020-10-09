@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov mocha",
-    "start": "NODE_ENV=dev node server"
+    "test": "set NODE_ENV=test&& nyc --reporter=lcov mocha",
+    "start": "set NODE_ENV=dev&& node server"
   },
   "author": "",
   "license": "ISC",
