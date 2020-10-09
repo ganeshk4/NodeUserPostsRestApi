@@ -14,13 +14,14 @@ let postController = () => {
 
   const post = function (req, res) {
     let post = req.body;
-    postModel
+    return postModel
     .create({
       content: post.content,
       userId: post.userid,
     })
     .then((post) => {
-      res.status(200).json(post);
+      res.status(200);
+      res.json(post);
     });
   }
   return { get, post };
