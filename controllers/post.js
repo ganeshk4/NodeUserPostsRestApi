@@ -5,7 +5,15 @@ let postController = () => {
   const get = function (req, res) {
     postModel
     .findAll({
-      include: db.user
+      include: [
+        {
+          model: db.user,
+          as: 'createdBy'
+        }, 
+        {
+          model: db.comment,
+          include: [ db.user ]
+        }]
     })
     .then((posts) => {
       res.status(200).json(posts);
@@ -17,7 +25,7 @@ let postController = () => {
     return postModel
     .create({
       content: post.content,
-      userId: post.userid,
+      userId: post.userId,
     })
     .then((post) => {
       res.status(200);
