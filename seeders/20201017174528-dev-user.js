@@ -9,7 +9,12 @@ module.exports = {
        updatedAt: new Date()
      },
      {
-      name: 'comment user',
+      name: 'comment user 1',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      name: 'comment user 2',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
