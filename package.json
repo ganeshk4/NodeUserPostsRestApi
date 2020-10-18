@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test&& nyc --reporter=lcov mocha",
-    "start": "set NODE_ENV=dev&& node server"
+    "seed:dev:up": "npx --no-install sequelize-cli --env dev db:seed:all",
+    "seed:dev:down": "npx --no-install sequelize-cli --env dev db:seed:undo:all",
+    "run:server": "set NODE_ENV=dev && node server",
+    "test": "set NODE_ENV=test && nyc --reporter=lcov mocha",
+    "start": "set NODE_ENV=dev && npm run seed:dev:down && npm run seed:dev:up && npm run run:server"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +24,7 @@
     "eslint": "^7.9.0",
     "mocha": "^8.1.3",
     "nyc": "^15.1.0",
+    "sequelize-cli": "^6.2.0",
     "should": "^13.2.3",
     "sinon": "^9.2.0"
   }
