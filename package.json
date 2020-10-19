@@ -6,9 +6,9 @@
   "scripts": {
     "seed:dev:up": "npx --no-install sequelize-cli --env dev db:seed:all",
     "seed:dev:down": "npx --no-install sequelize-cli --env dev db:seed:undo:all",
-    "run:server": "set NODE_ENV=dev && node server",
-    "test": "set NODE_ENV=test && nyc --reporter=lcov mocha",
-    "start": "set NODE_ENV=dev && npm run seed:dev:down && npm run seed:dev:up && npm run run:server"
+    "run:server": "set NODE_ENV=dev&& node server",
+    "test": "set NODE_ENV=test&& nyc --include-all-sources --reporter=lcov mocha",
+    "start": "set NODE_ENV=dev&& npm run seed:dev:down && npm run seed:dev:up && npm run run:server"
   },
   "author": "",
   "license": "ISC",
